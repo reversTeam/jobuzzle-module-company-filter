@@ -1,0 +1,52 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 10:58:18
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:43:52
+**************************************************************/
+
+class CompanyFilterDataMainEntity extends FilterDataMainEntity {
+
+	public _type = 'CompanyFilter';
+	public _templateTimeline = 'companyfilter_data_timeline_template';
+	public _templateMiniature = 'companyfilter_data_miniature_template';
+
+	initialize : function () {
+		_super();
+
+		this['_salarymax'] = undefined;
+	}
+
+	hydrate : function (datas) {
+		_super(datas);
+
+		if (datas.salarymax)
+			this.setSalarymax(datas.salarymax);
+	}
+
+	search : function (params) {
+		var reg = new RegExp(params, 'i');
+
+		return (
+			_super(params)
+			|| reg.test(this.getSalarymax())
+			|| (parseInt(this.getSalarymin()) < parseInt(params) && parseInt(this.getSalarymax()) > parseInt(params))
+		);
+	}
+
+	public getSalarymax : function () {
+		return this['_salarymax'];
+	}
+
+	public setSalarymax : function (salarymax) {
+		this['_salarymax'] = salarymax;
+
+		return this;
+	}
+
+}

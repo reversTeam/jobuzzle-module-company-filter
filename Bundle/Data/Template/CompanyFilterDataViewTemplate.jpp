@@ -1,0 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:45:05
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:27:43
+**************************************************************/
+
+class CompanyFilterDataViewTemplate extends FilterDataViewTemplate {
+
+	public _serviceName = 'companyfilter_data_main_service';
+	public _viewClassName = 'CompanyFilterDataTemplateViewView';
+	public _type = 'CompanyFilter';
+	public _route = 'companyfilter';
+
+}

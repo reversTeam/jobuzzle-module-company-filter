@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:48:29
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:24:55
+**************************************************************/
+
+
+class CompanyFilterDataTemplateDeleteView extends FilterDataTemplateDeleteView {
+
+	public _class = 'companyfilter';
+	public _elementType = 'CompanyFilter';
+
+	public display : function () {
+		return <div>Delete Company Filter</div>;
+	}
+
+}
