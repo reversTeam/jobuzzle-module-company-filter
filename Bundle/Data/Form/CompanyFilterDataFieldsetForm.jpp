@@ -1,0 +1,37 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:28:18
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:47:44
+**************************************************************/
+
+class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
+
+	public _formName = 'CompanyFilter';
+	public _createFormName = 'companyfilter_data_create_form';
+	public _searchFormName = 'companyfilter_data_search_form';
+	public _editFormName = 'companyfilter_data_edit_form';
+
+	public getElementsDisplay : function () {
+		var elementsDisplay = _super();
+
+		elementsDisplay['salarymax'] = this.getSalaryMaxDisplay();
+
+		return elementsDisplay;
+	}
+
+	public getSalaryMaxDisplay : function () {
+		if (!this['_salaryMaxDisplay']) {
+			this['_salaryMaxDisplay'] = {};
+			this['_salaryMaxDisplay']['type'] = 'Text';
+			this['_salaryMaxDisplay']['label'] = 'form.input.companyfilter.salary_max';
+		}
+		return this['_salaryMaxDisplay'];
+	}
+
+}
