@@ -1,0 +1,28 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 10:56:25
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:21:09
+**************************************************************/
+
+class CompanyFilterDataMainCollection extends FilterDataMainCollection {
+
+	_entityType = 'CompanyFilter';
+	_entityClass = 'companyfilter_data_main_entity';
+
+	getProtected : function () {
+		if (this._protect == undefined) {
+			var parent = _super();
+			this._protect = parent.concat(
+				Config.modules.CompanyFilter.collections.update.protect
+			);
+		}
+		return this._protect;
+	}
+
+}

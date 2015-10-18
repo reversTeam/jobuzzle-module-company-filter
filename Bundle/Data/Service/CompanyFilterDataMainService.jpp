@@ -1,0 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:43:00
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:24:30
+**************************************************************/
+
+class CompanyFilterDataMainService extends FilterDataMainService {
+
+	public _type = 'companyfilter';
+	public _entityType = 'CompanyFilter';
+	public _title = 'CompanyFilters';
+	public _fieldsetName = 'companyfilter_data_fieldset_form';
+
+}
