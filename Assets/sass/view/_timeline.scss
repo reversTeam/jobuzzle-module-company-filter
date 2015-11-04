@@ -3,11 +3,33 @@
 *     ####         #                               #          *
 *       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
 *       ## #     # #     # #     #      #       #  # #     #  *
-*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 10:35:37
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-11-03 16:44:18
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 16:44:29
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 16:55:22
 **************************************************************/
 
-@import "view/all";
+div.filter.filtercompany.timeline {
+
+
+	div.description {
+
+		p.text {
+			text-align: center;
+			vertical-align: top;
+			color : darken($white_color, 40);
+			padding: 0px 10px 20px 10px;
+			height: 115px;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			overflow: hidden;
+			word-wrap: break-word;
+			-o-text-overflow: ellipsis;
+  			text-overflow: ellipsis;
+  			margin: 9px;
+		}
+
+	}
+
+}

@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:47:44
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 13:57:24
 **************************************************************/
 
 class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
@@ -17,12 +17,24 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 	public _searchFormName = 'companyfilter_data_search_form';
 	public _editFormName = 'companyfilter_data_edit_form';
 
+	public _salaryMaxDisplay = undefined;
+
+	public _salaryMaxInput = undefined;
+
 	public getElementsDisplay : function () {
 		var elementsDisplay = _super();
 
 		elementsDisplay['salarymax'] = this.getSalaryMaxDisplay();
 
 		return elementsDisplay;
+	}
+
+	public getElementsInput : function () {
+		var elementsInput = _super();
+
+		elementsInput['salarymax'] = this.getSalaryMinInput();
+
+		return elementsInput;
 	}
 
 	public getSalaryMaxDisplay : function () {
@@ -32,6 +44,21 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 			this['_salaryMaxDisplay']['label'] = 'form.input.companyfilter.salary_max';
 		}
 		return this['_salaryMaxDisplay'];
+	}
+
+	public getSalaryMaxInput : function () {
+		if (this['_salaryMaxInput'] == undefined) {
+			this['_salaryMaxInput'] = {};
+
+			this['_salaryMaxInput']['required'] = false;
+
+			this['_salaryMaxInput']['filters'] = [];
+			this['_salaryMaxInput']['filters'][0] = {}
+			this['_salaryMaxInput']['filters'][0]['name'] = 'Trim';
+			this['_salaryMaxInput']['filters'][1] = {}
+			this['_salaryMaxInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_salaryMaxInput'];
 	}
 
 }
