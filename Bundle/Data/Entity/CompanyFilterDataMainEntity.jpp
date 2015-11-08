@@ -7,26 +7,29 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:43:52
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 03:09:51
 **************************************************************/
 
 class CompanyFilterDataMainEntity extends FilterDataMainEntity {
 
 	public _type = 'CompanyFilter';
 	public _templateTimeline = 'companyfilter_data_timeline_template';
-	public _templateMiniature = 'companyfilter_data_miniature_template';
+	// public _templateMiniature = 'companyfilter_data_miniature_template';
 
 	initialize : function () {
 		_super();
 
 		this['_salarymax'] = undefined;
+		this['_description'] = undefined;
 	}
 
 	hydrate : function (datas) {
 		_super(datas);
 
-		if (datas.salarymax)
-			this.setSalarymax(datas.salarymax);
+		if (datas['salarymax'] != undefined)
+			this.setSalarymax(datas['salarymax']);
+		if (datas['description'] != undefined)
+			this.setDescription(datas['description']);
 	}
 
 	search : function (params) {
@@ -45,6 +48,16 @@ class CompanyFilterDataMainEntity extends FilterDataMainEntity {
 
 	public setSalarymax : function (salarymax) {
 		this['_salarymax'] = salarymax;
+
+		return this;
+	}
+
+	public getDescription : function () {
+		return this['_description'];
+	}
+
+	public setDescription : function (description) {
+		this['_description'] = description;
 
 		return this;
 	}
