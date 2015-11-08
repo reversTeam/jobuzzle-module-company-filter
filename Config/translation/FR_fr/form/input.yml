@@ -7,9 +7,10 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-03 13:50:51
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-08 03:09:30
 ###############################################################
 
 companyfilter:
 	salary_min : 'Salaire minimum'
 	salary_max : 'Salaire maximum'
+	description : Description

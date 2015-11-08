@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 13:57:24
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 03:09:13
 **************************************************************/
 
 class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
@@ -25,6 +25,7 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 		var elementsDisplay = _super();
 
 		elementsDisplay['salarymax'] = this.getSalaryMaxDisplay();
+		elementsDisplay['description'] = this.getDescriptionDisplay();
 
 		return elementsDisplay;
 	}
@@ -44,6 +45,15 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 			this['_salaryMaxDisplay']['label'] = 'form.input.companyfilter.salary_max';
 		}
 		return this['_salaryMaxDisplay'];
+	}
+
+	public getDescriptionDisplay : function () {
+		if (!this['_descriptionDisplay']) {
+			this['_descriptionDisplay'] = {};
+			this['_descriptionDisplay']['type'] = 'Text';
+			this['_descriptionDisplay']['label'] = 'form.input.companyfilter.description';
+		}
+		return this['_descriptionDisplay'];
 	}
 
 	public getSalaryMaxInput : function () {

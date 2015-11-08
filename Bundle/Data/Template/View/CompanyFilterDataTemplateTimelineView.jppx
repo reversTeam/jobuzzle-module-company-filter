@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 15:46:01
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 03:12:49
 **************************************************************/
 
 class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
@@ -39,7 +39,7 @@ class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 					</span>
 				</div>
 				<div className="description">
-					<p className="text">{parent.getDescription()}</p>
+					<p className="text">{entity.getDescription()}</p>
 				</div>
 				<div className="centerButton">
 					<button className="secondary" data-url={this.getUrl()} onClick={this.link}>
