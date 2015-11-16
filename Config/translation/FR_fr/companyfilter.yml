@@ -7,9 +7,15 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 12:30:41
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-09 14:12:13
 ###############################################################
 
-view : '{{url}}'
-update : '{{url}}'
-CompanyFilters: Filtres entreprises
+page:
+	title:
+		view : '{{url}}'
+		update : '{{url}}'
+		CompanyFilters: Filtres entreprises
+
+view:
+	actions:
+		edit: Editer le filtre
