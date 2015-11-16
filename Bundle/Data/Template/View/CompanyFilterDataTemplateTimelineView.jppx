@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 03:12:49
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 11:23:09
 **************************************************************/
 
 class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
@@ -23,7 +23,7 @@ class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		
 
 		if (parent) {
-			var content = <div className="filter filtercompany timeline">
+			var content = <div className="filter filtercompany timeline" onClick={this.link} data-url={this.getUrl()}>
 				<div className="parent" data-url={parentUrl} onClick={this.link}>
 					{ parent ? parent.displayMiniature() : null }
 				</div>
