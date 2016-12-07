@@ -7,12 +7,18 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 11:23:09
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-21 13:20:06
 **************************************************************/
 
 class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
 
-	public display : function () {
+	public getClassElement : function () {
+		var classElement = _super();
+		classElement.push('companyfilter');
+		return classElement;
+	}
+
+	public displayContent : function () {
 		var router = serviceLocator.get('Router');
 		var entity = this.state['entity'];
 		var parent = entity.getParent();
@@ -23,7 +29,7 @@ class CompanyFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		
 
 		if (parent) {
-			var content = <div className="filter filtercompany timeline" onClick={this.link} data-url={this.getUrl()}>
+			var content = <div onClick={this.link} data-url={this.getUrl()}>
 				<div className="parent" data-url={parentUrl} onClick={this.link}>
 					{ parent ? parent.displayMiniature() : null }
 				</div>

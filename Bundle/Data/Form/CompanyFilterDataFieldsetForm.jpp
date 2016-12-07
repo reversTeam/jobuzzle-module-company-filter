@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 19:39:37
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-27 15:45:24
 **************************************************************/
 
 class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
@@ -18,8 +18,10 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 	public _editFormName = 'companyfilter_data_edit_form';
 
 	public _salaryMaxDisplay = undefined;
-
 	public _salaryMaxInput = undefined;
+
+	public _descriptionDisplay = undefined;
+	public _descriptionInput = undefined;
 
 	public getElementsDisplay : function () {
 		var elementsDisplay = _super();
@@ -34,6 +36,7 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 		var elementsInput = _super();
 
 		elementsInput['salarymax'] = this.getSalaryMinInput();
+		elementsInput['description'] = this.getDescriptionInput();
 
 		return elementsInput;
 	}
@@ -60,7 +63,7 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 		if (this['_salaryMaxInput'] == undefined) {
 			this['_salaryMaxInput'] = {};
 
-			this['_salaryMaxInput']['required'] = false;
+			this['_salaryMaxInput']['required'] = true;
 
 			this['_salaryMaxInput']['filters'] = [];
 			this['_salaryMaxInput']['filters'][0] = {}
@@ -69,6 +72,23 @@ class CompanyFilterDataFieldsetForm extends FilterDataFieldsetForm {
 			this['_salaryMaxInput']['filters'][1]['name'] = 'Int';
 		}
 		return this['_salaryMaxInput'];
+	}
+
+	public getDescriptionInput : function () {
+		if (!this['_descriptionInput']) {
+			this['_descriptionInput'] = {};
+
+			this['_descriptionInput']['required'] = true;
+
+			this['_descriptionInput']['filters'] = [];
+			this['_descriptionInput']['filters'][0] = {};
+			this['_descriptionInput']['filters'][0]['name'] = 'Trim';
+
+			this['_descriptionInput']['validators'] = [];
+			this['_descriptionInput']['validators'][0] = {};
+			this['_descriptionInput']['validators'][0]['name'] = 'Text';
+		}
+		return this['_descriptionInput'];
 	}
 
 }

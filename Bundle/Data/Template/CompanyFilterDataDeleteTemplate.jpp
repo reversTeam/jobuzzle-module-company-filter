@@ -7,13 +7,13 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:26:42
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-21 15:32:28
 **************************************************************/
 
 class CompanyFilterDataDeleteTemplate extends FilterDataDeleteTemplate {
 
 	public _viewClassName = 'CompanyFilterDataTemplateDeleteView';
 	public _type = 'CompanyFilter';
-	public _route = 'companyfilter';
+	public _serviceName = 'companyfilter_data_main_service';
 
 }

@@ -7,12 +7,94 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:24:41
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-28 14:49:58
 **************************************************************/
 
 class CompanyFilterDataTemplateCreateView extends FilterDataTemplateCreateView {
 
 	public _class = 'CompanyFilter';
 	public _elementType = 'CompanyFilter';
+
+	public initialState : function () {
+		var self = this;
+		var states = {};
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+		var router = serviceLocator.get('Router');
+
+		store.request(router.build('/skill'), {}, function (result) {
+			self.setState({ 'skills' : store.getAll('Skill')._entity});
+		});
+
+		states['skills'] = {};
+		states['skillsActive'] = [];
+
+		return states;
+	}
+
+
+	public getSkillsSelect : function () {
+		var skills = this.state['skills'];
+
+		return <select>
+			{Object.keys(skills).map(function (i) {
+				return <option value={i} key={i}>{skills[i].getName()}</option>
+			})}
+		</select>;
+	}
+
+	public addSkillSelect : function () {
+		console.debug('Add Skill Select');
+	}
+
+	public getActiveSkill : function () {
+		var skills = [];
+		var active = this.state['skillsActive'];
+
+		for (var i in active) {
+			skills.push(<div className="skillSelectValue" key={i}>
+				<label>{this.state['skills'][i] ? this.state['skills'][i].getName() : ''}</label>
+			</div>);
+		}
+		return skills;
+	}
+
+
+	// public display: function () {
+	// 	return <div className="temporaryCreateFilterCompany">
+	// 		<fieldset>
+	// 			<legend>Déposer une offre</legend>
+	// 			<div className="companyfilterSelect">
+	// 				<div className="contentValue">
+	// 					<label>Quel type de profil rechercher vous ?</label>
+	// 					<input type="text"/>
+	// 				</div>
+	// 				<div className="contentValue">
+	// 					<label>Courte description (160 caractères max)</label>
+	// 					<textarea></textarea>
+	// 				</div>
+	// 				<div className="contentValue level">
+	// 					<label>Salaire (k / an)</label>
+	// 					<div className="levelBar">
+	// 						<span className="infoText left">0</span>
+	// 						<span className="infoText right">100</span>
+	// 						<span className="value min">0</span>
+	// 						<span className="value max">100</span>
+	// 					</div>
+	// 				</div>
+	// 			</div>
+	// 			<div className="skillsSelect">
+	// 				<h2>Ajouter des compétences</h2>
+	// 				<div className="contentValue">
+	// 					{this.getSkillsSelect()}
+	// 					<button className="secondary" onClick={this.addSkillSelect.bind(this)}>Ajouter</button>
+	// 				</div>
+	// 				{this.getActiveSkill()}
+	// 			</div>
+	// 			<div className="sendFormContainer">
+	// 				<button className="secondary">Créer</button>
+	// 			</div>
+	// 		</fieldset>
+	// 	</div>
+	// }
 
 }

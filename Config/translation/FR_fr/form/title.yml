@@ -7,10 +7,11 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 12:32:42
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-21 15:17:23
 ###############################################################
 
 companyfilter :
 	create: 'Creér un filtre entreprises'
 	edit: 'Editer filtre entreprises'
 	search: 'Rechercher des filtres entreprises'
+	delete: Supprimer le filtre entreprise

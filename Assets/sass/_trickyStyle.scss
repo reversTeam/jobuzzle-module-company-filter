@@ -1,0 +1,139 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-11-28 12:31:42
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-29 00:37:08
+**************************************************************/
+
+div.temporaryCreateFilterCompany {
+	background-color: red;
+	@include backgroundApp;
+
+
+	fieldset {
+		border: none;
+		padding : 20px;
+
+		legend {
+			font-size: 42px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		div.companyfilterSelect {
+			padding-bottom: 20px;
+			border-bottom: 1px solid darken($white_color, 10);
+
+			div.contentValue {
+				width : 100%;
+				margin-bottom : 20px;
+
+				label {
+					display: block;
+				}
+
+				input, textarea {
+					display: block;
+					width: 100%;
+					box-sizing: border-box;
+				}
+
+				input {
+					height: 30px;
+					padding: 0px 10px;
+				}
+
+				textarea {
+					height: 80px;
+					resize: none;
+					padding: 10px;
+				}
+
+
+				&.level {
+					div.levelBar {
+						position: relative;
+						margin-top : 40px;
+						display: block;
+						background : darken($white_color, 20);
+						width: 100%;
+						height: 3px;
+						border-radius: 2px;
+
+						span.infoText {
+							position: absolute;
+							top : -35px;
+							color: darken($white_color, 30);
+
+							&.left {
+								left : 0px;
+							}
+
+							&.right {
+								right: 0px;
+							}
+						}
+
+						span.value {
+							height: 20px;
+							width: 20px;
+							display: block;
+							position: absolute;
+							top: -10px;
+							background-color: $secondary_color;
+							border-radius: 50%;
+							border: 2px solid darken($secondary_color, 10);
+							cursor: pointer;
+							color : $white_color;
+							font-size: 10px;
+							text-align: center;
+							line-height: 20px;
+							font-weight: bold;
+
+							&.min {
+								left: 0px;
+							}
+
+							&.max {
+								right: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		div.skillsSelect {
+			h2 {
+				text-align: center;
+			}
+
+			select {
+				width: 300px;
+				height: 30px;
+				display: inline-block;
+				padding: 0px 10px;
+				margin-right: 10px;
+
+			}
+
+			div.skillSelectValue {
+				display: block;
+				margin : 5px 0px;
+				width: 100%;
+				height: 100px;
+				border-bottom: 1px solid darken($white_color, 5);
+			}
+		}
+		div.sendFormContainer {
+			margin-top : 20px;
+			text-align: center;
+		}
+	}
+
+}
